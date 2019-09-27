@@ -3,9 +3,11 @@ package com.ashandilya.googlecolab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -72,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rate(View view) {
+
+        try{
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=" + "com.ashandilya.googlecolab")));
+        }catch (ActivityNotFoundException e){
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=com.ashandilya.googlecolab" + getPackageName())));
+        }
+
     }
 
     public void kudos() {
