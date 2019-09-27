@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
 
         dialog = new Dialog(this);
 
+        cardViewShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/Plain text");
+                String shareBody = "https://play.google.com/store/apps/details?id=com.ashandilya.googlecolab";
+                String shareSubject = "Try Google Colab in your phone!";
+
+                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,shareSubject);
+                startActivity(Intent.createChooser(shareIntent,"Share Using"));
+            }
+        });
+
         cardViewKudos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,9 +72,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rate(View view) {
-    }
-
-    public void share(View view) {
     }
 
     public void kudos() {
