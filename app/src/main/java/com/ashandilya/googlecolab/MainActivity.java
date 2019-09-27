@@ -71,13 +71,11 @@ public class MainActivity extends AppCompatActivity {
         textView4 = findViewById(R.id.iconKudos);
         textView3 = findViewById(R.id.iconSource);
 
-        imageViewCloseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
+    }
+
+    public void close(View view) {
+        dialog.dismiss();
     }
 }
