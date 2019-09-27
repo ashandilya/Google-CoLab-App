@@ -154,7 +154,6 @@
                 android:id="@+id/kudos"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:onClick="kudos"
                 app:cardCornerRadius="55dp">
 
                 <ImageView

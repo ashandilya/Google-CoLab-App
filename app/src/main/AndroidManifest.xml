@@ -9,7 +9,6 @@
         android:roundIcon="@drawable/colab_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kudos"></activity>
         <activity android:name=".colab_webView" />
         <activity android:name=".MainActivity">
             <intent-filter>
