@@ -21,6 +21,7 @@
         android:textStyle="normal" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/colabCard"
         android:layout_width="wrap_content"
         android:layout_height="170dp"
         android:layout_centerInParent="true"
@@ -35,7 +36,150 @@
             app:srcCompat="@drawable/colab" />
 
     </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/colabCard"
+        android:layout_alignParentBottom="true">
 
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:gravity="center"
+    android:orientation="vertical">
 
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="120dp"
+        app:cardCornerRadius="55dp"
+        android:id="@+id/suggestion"
+        android:layout_height="wrap_content">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/suggest"
+        android:layout_gravity="center"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    <TextView
+        android:layout_below="@id/suggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="Suggestion"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="60dp"
+        android:layout_marginTop="120dp"
+        app:cardCornerRadius="55dp"
+        android:id="@+id/rate"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/love"
+            android:layout_gravity="center" />
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    <TextView
+        android:layout_below="@id/suggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="Rate Us"/>
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="60dp"
+                android:layout_marginTop="120dp"
+                app:cardCornerRadius="55dp"
+                android:id="@+id/share"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/shareImg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/share"
+                    android:layout_gravity="center" />
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <TextView
+                android:layout_below="@id/suggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="Share It"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="60dp"
+                android:layout_marginTop="120dp"
+                app:cardCornerRadius="55dp"
+                android:id="@+id/kudos"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/kudosImg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/kudos"
+                    android:layout_gravity="center" />
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <TextView
+                android:layout_below="@id/suggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="Kudos"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>
