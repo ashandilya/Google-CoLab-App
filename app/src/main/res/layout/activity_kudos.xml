@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".Kudos">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kudos for Code Editor"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:textAlignment="textStart"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="www.flaticon.com"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:textAlignment="textStart"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kudos for Icons"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="#fff"
+        android:textAlignment="textStart"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Colaboratory Team"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:textAlignment="textStart"/>
+
+
+
+
+
+
+</LinearLayout>

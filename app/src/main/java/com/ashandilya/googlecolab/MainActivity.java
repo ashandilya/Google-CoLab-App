@@ -32,12 +32,13 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
+        
     }
 
     public void suggestion(View view) {
+
+
+
     }
 
     public void rate(View view) {
