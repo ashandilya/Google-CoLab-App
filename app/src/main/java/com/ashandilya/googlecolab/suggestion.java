@@ -2,6 +2,8 @@ package com.ashandilya.googlecolab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +27,22 @@ public class suggestion extends AppCompatActivity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String emailAdd = editTextAdd.getText().toString().trim();
+                String emailSub = editTextSubject.getText().toString().trim();
+                String emailMessage = editTextMessage.getText().toString().trim();
 
+                sendEmail(emailAdd, emailSub, emailMessage);
             }
         });
+    }
+
+    private void sendEmail(String emailAdd, String emailSub, String emailMessage) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("Mailto:"));
+        emailIntent.setType("text/plain");
+
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAdd});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, emailSub);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, emailMessage);
     }
 }
