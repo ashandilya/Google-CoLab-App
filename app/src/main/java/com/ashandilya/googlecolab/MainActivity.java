@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void suggestion(View view) {
-
-
-
+        Intent intent = new Intent(MainActivity.this,suggestion.class);
+        startActivity(intent);
+        finish();
     }
 
     public void rate(View view) {
