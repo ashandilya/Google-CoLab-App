@@ -23,7 +23,7 @@ import com.google.android.material.circularreveal.cardview.CircularRevealCardVie
 public class MainActivity extends AppCompatActivity {
 
     private InterstitialAd mInterstitialAd;
-    private AdView adView;
+    //private AdView adView;
 
     CircularRevealCardView cardViewSuggest, cardViewRate, cardViewShare, cardViewKudos;
     Dialog dialog;
@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3202873213580151/5261500541");
 
@@ -46,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
         cardViewShare = findViewById(R.id.share);
         cardViewKudos = findViewById(R.id.kudos);
 
+
+    /*    TODO:  Next Update
         MobileAds.initialize(this, "ca-app-pub-3202873213580151/8793551449");
         adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
-
+*/
 
         dialog = new Dialog(this);
 
