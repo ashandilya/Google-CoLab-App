@@ -18,7 +18,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 public class suggestion extends AppCompatActivity {
 
-    AdView mAdView = new AdView(this);
+    private AdView mAdView;
     EditText editTextAdd, editTextSubject, editTextMessage;
     Button buttonSubmit;
 
