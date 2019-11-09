@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="6dp"
     android:background="#0d0d0d"
-    android:orientation="vertical"
     tools:context=".suggestion">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/emailAddCard"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:contentPadding="4dp"
@@ -38,9 +38,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/emailSubCard"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:contentPadding="4dp"
+        android:layout_below="@id/emailAddCard"
         app:cardCornerRadius="4dp"
         android:layout_margin="2dp">
 
@@ -66,8 +68,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/emailMessageCard"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_below="@id/emailSubCard"
         app:contentPadding="4dp"
         app:cardCornerRadius="4dp"
         android:layout_margin="2dp">
@@ -98,10 +102,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:layout_below="@id/emailMessageCard"
         android:text="Submit"
         android:textColor="#ffffff"
         android:textSize="22dp"
         android:background="#4834DF"
         android:textStyle="bold"
         android:layout_marginTop="15dp"/>
-</LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_marginTop= "60dp"
+        android:layout_below="@id/SubmitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3202873213580151/8596797247">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>

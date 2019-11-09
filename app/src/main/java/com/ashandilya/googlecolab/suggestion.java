@@ -10,8 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 public class suggestion extends AppCompatActivity {
 
+    AdView mAdView = new AdView(this);
     EditText editTextAdd, editTextSubject, editTextMessage;
     Button buttonSubmit;
 
@@ -19,6 +26,11 @@ public class suggestion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
+
+        MobileAds.initialize(this, "ca-app-pub-3202873213580151~3628854679");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         editTextAdd = findViewById(R.id.emailAdd);
         editTextSubject = findViewById(R.id.emailSub);
