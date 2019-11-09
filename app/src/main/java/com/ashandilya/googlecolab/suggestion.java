@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class suggestion extends AppCompatActivity {
 
@@ -44,5 +45,11 @@ public class suggestion extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAdd});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, emailSub);
         emailIntent.putExtra(Intent.EXTRA_TEXT, emailMessage);
+
+        try{
+            startActivity(Intent.createChooser(emailIntent, "Choose your favourite Email client:"));
+        }catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 }
