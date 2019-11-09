@@ -9,13 +9,21 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.circularreveal.cardview.CircularRevealCardView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private InterstitialAd mInterstitialAd;
+    private AdView adView;
 
     CircularRevealCardView cardViewSuggest, cardViewRate, cardViewShare, cardViewKudos;
     Dialog dialog;
@@ -26,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3202873213580151/5261500541");
+
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         cardViewSuggest = findViewById(R.id.suggestion);
         cardViewRate = findViewById(R.id.rate);
@@ -51,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
         cardViewKudos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
+
                 kudos();
             }
         });
@@ -95,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
+
+        MobileAds.initialize(this, "ca-app-pub-3202873213580151/8793551449");
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 
     public void close(View view) {

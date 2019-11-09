@@ -86,7 +86,20 @@
                 android:textColor="#fff"
                 android:textAlignment="textStart"/>
 
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-3202873213580151/8793551449">
+            </com.google.android.gms.ads.AdView>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+
+<!--    -->
 </RelativeLayout>
