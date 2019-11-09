@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3202873213580151/5261500541");
 
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         cardViewRate = findViewById(R.id.rate);
         cardViewShare = findViewById(R.id.share);
         cardViewKudos = findViewById(R.id.kudos);
+
+        MobileAds.initialize(this, "ca-app-pub-3202873213580151/8793551449");
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
 
         dialog = new Dialog(this);
 
@@ -114,11 +121,6 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
-
-        MobileAds.initialize(this, "ca-app-pub-3202873213580151/8793551449");
-        adView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
     }
 
     public void close(View view) {
